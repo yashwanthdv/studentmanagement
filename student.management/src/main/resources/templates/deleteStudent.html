@@ -56,16 +56,51 @@ button {
 button:hover {
     background-color: #9E7777;
 }
+
+.popup-message {
+		display:block;
+		margin-left: 80%;
+		margin-right: 12px;
+		background-color: #DEBA9D;
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 4px;
+		width: fill-content;
+		color: #6F4C5B;
+		font-size: 20px;
+		font-weight: bold;
+   		text-align: center;
+}
+
+.message {
+           color: #6F4C5B;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .hidden {
+            display: none;
+        }
 	
 
 </style>
 </head>
 <body>
+<div class="popup-message" >
+    	<p th:if="${mssg}" id="message-box" class="message" th:text="${mssg}"></p></div>
 	<h2>Delete Student</h2>
 		<form action="/deleteStudent" method="get">
 		<label>Enter Roll No.</label>
 		<input type="text" required name="roll">
 		<button type=submit>Delete Student</button>
 		</form>
+		<script>
+        setTimeout(function() {
+            var messageBox = document.getElementById('message-box');
+            if (messageBox) {
+                messageBox.classList.add('hidden');
+            }
+        }, 2000); 
+    </script>
 </body>
 </html>

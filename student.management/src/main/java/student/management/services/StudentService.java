@@ -8,7 +8,7 @@ public interface StudentService {
 	String addStudent(Student st);
 	Student searchStudent(int roll);
 	String updateStudent(Student st);
-	String deleteStudent(int roll);
+	boolean deleteStudent(int roll);
 	
 	
 	List<Student> fetchAllStudents();

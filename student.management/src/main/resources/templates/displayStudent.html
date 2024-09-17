@@ -5,36 +5,67 @@
 <meta charset="ISO-8859-1">
 <title>Display Student</title>
  <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F5E8C7; /* Light background color */
-            color: #6F4C5B; /* Dark text color for contrast */
-            margin: 20px;
-        }
-        h1 {
-            color: #9E7777; /* Slightly darker color for the main heading */
-        }
-        h3 {
-            color: #DEBA9D; /* Lighter color for sub-headings */
-        }
-        p, span {
-            display: block;
-            margin: 5px 0;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5E8C7;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #9E7777; /* Soft pink for headings */
+    text-align: center;
+     padding-top: 20px;
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #9E7777;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-item {
+    margin-bottom: 15px;
+    color: #F5E8C7;
+}
+
+.form-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.form-item span {
+color: white;
+    font-size: 20px;
+}
+
     </style>
 </head>
 <body>
 <h1>Student Details</h1>
-<h3>Student roll:</h3>
-<p th:text = "${student.roll}"></p>
-<h3>Student name:</h3>
-<span th:text = "${student.name}"></span>
-<h3>Student branch:</h3>
-<span th:text = "${student.branch}"></span>
-<h3>Student yop:</h3>
-<span th:text = "${student.yop}"></span>
-<h3>Student cgpa:</h3>
-<span th:text = "${student.cgpa}"></span>
-
+   <form class="form-container">
+            <div class="form-item">
+                <h3>Student roll:</h3><br>
+                <span th:text="${student.roll}"></span>
+            </div>
+            <div class="form-item">
+                <h3>Student name:</h3><br>
+                <span th:text="${student.name}"></span>
+            </div>
+            <div class="form-item">
+                <h3>Student branch:</h3><br>
+                <span th:text="${student.branch}"></span>
+            </div>
+            <div class="form-item">
+                <h3>Student yop:</h3><br>
+                <span th:text="${student.yop}"></span>
+            </div>
+            <div class="form-item">
+                <h3>Student cgpa:</h3><br>
+                <span th:text="${student.cgpa}"></span>
+            </div>
+        </form>
 </body>
 </html>

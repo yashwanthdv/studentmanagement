@@ -21,7 +21,7 @@ implements StudentService{
 	}
 	
 	public Student searchStudent(int roll) {
-		return repo.findById(roll).get();
+		return repo.findById(roll).orElse(null);
 		
 	}
 	
@@ -30,10 +30,13 @@ implements StudentService{
 		return "student updated ";
 	}
 	
-	public String deleteStudent(int roll) {
-		repo.deleteById(roll);
-		return "Student deleted";
-		
+	public boolean deleteStudent(int roll) {
+		 if (repo.existsById(roll)) {
+		        repo.deleteById(roll);
+		        return true;  // Student found and deleted
+		    } else {
+		        return false; // Student not found
+		    }
 	}
 	
 	

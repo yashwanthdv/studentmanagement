@@ -17,7 +17,7 @@ body {
 }
 
 h2 {
-    margin-top: -30px;
+    margin-top: 0px;
     color: #6F4C5B; /* Darker text color */
     font-size: 38px;
 }
@@ -47,7 +47,6 @@ button {
 
 button:hover {
 background-color: #9E7777;
-     /* Darker color on hover */
     color: #F5E8C7; /* Maintain text color on hover */
 }
 
@@ -56,6 +55,31 @@ a {
     color: #9E7777; /* Link color */
 }
 
+.popup-message {
+		display:block;
+		margin-left: 80%;
+		margin-right: 10px;
+		margin-top: -90px;
+		background-color: #DEBA9D;
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 4px;
+		width: fill-content;
+		color: #6F4C5B;
+		font-size: 20px;
+		font-weight: bold;
+   text-align: center;
+}
+
+  .message {
+           color: #6F4C5B;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .hidden {
+            display: none;
+        }
 
 
 
@@ -63,6 +87,8 @@ a {
     </style>
 	</head>
 	<body>
+	<div class="popup-message" >
+    	<p th:if="${mssg}" id="message-box" class="message" th:text="${mssg}"></p></div>
 	<h2>Student Management</h2>
 	    <div class="container">
 	        <a href="/openAddStudentPage"> <button>Add Student</button></a>
@@ -75,8 +101,14 @@ a {
 	        
     		</div>
     	</div>
-    	<p th:if= "${mssg}" 
-    	th:text= "${mssg}"></p>
+    	 <script>
+        setTimeout(function() {
+            var messageBox = document.getElementById('message-box');
+            if (messageBox) {
+                messageBox.classList.add('hidden');
+            }
+        }, 2000); 
+    </script>
     	
     	
     	

@@ -50,25 +50,34 @@ public class StudentController {
 	
 	@GetMapping("/searchStudent")
 	public String searchStudent(@RequestParam int roll, Model model) {
-		Student st=service.searchStudent(roll);
-		model.addAttribute("student", st);
-		return "displayStudent";
+		Student st=service.searchStudent(roll); 
+		if (st == null) {
+	        model.addAttribute("message", "Student with roll number " + roll + " not found.");
+	        return "searchStudent"; 
+	    }
+	    model.addAttribute("student", st);
+	    return "displayStudent";
 	}
 	
 	@PostMapping("/updateStudent")
 	public String updateStudent(@ModelAttribute Student st,Model model) {
 		service.updateStudent(st);
 		model.addAttribute("mssg", "Student updated successfully");
-	
 		return "index";
 	}
 	
 	@GetMapping("/deleteStudent")
 	public String deleteStudent(@RequestParam int roll, Model model) {
-		service.deleteStudent(roll);
-		model.addAttribute("mssg","Student deleted succesfully");
+		boolean status =service.deleteStudent(roll);
+		if(status) {
+			model.addAttribute("mssg","Student deleted succesfully");
+			return "index";
+		}else 
+		{
+			model.addAttribute("mssg","Roll no not found");
+			return "deleteStudent";
+		}
 		
-		return "index";
 		
 	}
 	
