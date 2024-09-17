@@ -3,88 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Home Page</title>
-		 <style>
-body {
-    background-color: #F5E8C7; /* Light background color */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-h2 {
-    margin-top: 0px;
-    color: #6F4C5B; /* Darker text color */
-    font-size: 38px;
-}
-
-.container {
-    background-color: #DEBA9D; /* Soft background color for container */
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-}
-
-button {
-    background-color: #6F4C5B; /* Button background color */
-    color: #F5E8C7; /* Button text color */
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-button:hover {
-background-color: #9E7777;
-    color: #F5E8C7; /* Maintain text color on hover */
-}
-
-a {
-    text-decoration: none;
-    color: #9E7777; /* Link color */
-}
-
-.popup-message {
-		display:block;
-		margin-left: 80%;
-		margin-right: 10px;
-		margin-top: -90px;
-		background-color: #DEBA9D;
-		padding-left: 4px;
-		padding-right: 4px;
-		border-radius: 4px;
-		width: fill-content;
-		color: #6F4C5B;
-		font-size: 20px;
-		font-weight: bold;
-   text-align: center;
-}
-
-  .message {
-           color: #6F4C5B;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        
-        .hidden {
-            display: none;
-        }
-
-
-
-
-    </style>
+		<link rel="stylesheet" type="text/css" th:href="@{/index.css}">
 	</head>
 	<body>
 	<div class="popup-message" >
@@ -94,24 +13,18 @@ a {
 	        <a href="/openAddStudentPage"> <button>Add Student</button></a>
 	        <a href="/openUpdateStudentPage"><button>Update Student</button></a>
 	        <a href="/openDeleteStudentPage"><button>Delete Student</button></a>
-	        <a href="/openSearchStudentPage"><button>Search Student</button>
-	        </a>
+	        <a href="/openSearchStudentPage"><button>Search Student</button></a>
 	        <a href="/fetchAllStudents"><button>Fetch All Students</button></a>
-	        <a href="/deleteAllStudents"><button>Delete All Students</button></a>
-	        
+	        <a href="/deleteAllStudents"><button>Delete All Students</button></a> 
     		</div>
     	</div>
-    	 <script>
+    	<script>
         setTimeout(function() {
             var messageBox = document.getElementById('message-box');
             if (messageBox) {
                 messageBox.classList.add('hidden');
             }
         }, 2000); 
-    </script>
-    	
-    	
-    	
-	    
+    </script>  
 	</body>
 </html>

@@ -1,84 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Search Student</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F5E8C7; /* Light beige background */
-    color: #6F4C5B; /* Dark brown text color */
-}
+	<meta charset="ISO-8859-1">
+	<title>Search Student</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/searchStudent.css}">
 
-h2 {
-    color: #9E7777; /* Soft pink for headings */
-    text-align: center;
-     padding-top: 20px;
-}
-
-form {
-    padding: 20px;
-    width:300px;
-    margin: 0 auto;
-    background-color: #DEBA9D; /* Warm beige for the form background */
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    color: #6F4C5B;
-    margin-bottom: 0.5rem;
-}
-
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 8px;
-    border: 1px solid #6F4C5B;
-    border-radius: 4px;
-    margin-bottom: 12px;
-}
-button {
-    padding: 10px 20px;
-    background-color: #6F4C5B; /* Dark brown background for button */
-    color: #F5E8C7; /* Light beige text on button */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #9E7777; /* Change to soft pink on hover */
-}
-
-.popup-message {
-		display:block;
-		margin-left: 80%;
-		background-color: #DEBA9D;
-		padding-left: 4px;
-		padding-right: 4px;
-		border-radius: 4px;
-		width: fill-content;
-		color: #6F4C5B;
-		font-size: 20px;
-		font-weight: bold;
-   text-align: center;
-}
-
-.message {
-           color: #6F4C5B;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        
-        .hidden {
-            display: none;
-        }
-
-
-</style>
 </head>
 <body>
 <div class="popup-message" >
@@ -86,10 +12,10 @@ button:hover {
 	<h2>Search Student</h2>
 	
 	<form action="/searchStudent">
-	<label for="roll">Enter Roll No to Search</label>
-	<input type="text" name="roll">
-	
-	<button type="submit">Search Student</button>
+		<label for="roll">Enter Roll No to Search</label>
+		<input type="text" name="roll">
+		
+		<button type="submit">Search Student</button>
 	</form>
 	<script>
         setTimeout(function() {
