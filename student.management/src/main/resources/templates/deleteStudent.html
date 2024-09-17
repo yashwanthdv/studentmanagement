@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete Student</title>
+<style>
+	body {
+    font-family: Arial, sans-serif;
+    background-color: #F5E8C7;
+    color: #6F4C5B;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #9E7777;
+    text-align: center;
+    padding-top: 20px;
+}
+
+form {
+    background-color: #DEBA9D;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #6F4C5B;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    border: 1px solid #6F4C5B;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+button {
+    background-color: #6F4C5B;
+   color: #F5E8C7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9E7777;
+}
+	
+
+</style>
+</head>
+<body>
+	<h2>Delete Student</h2>
+		<form action="/deleteStudent" method="get">
+		<label>Enter Roll No.</label>
+		<input type="text" required name="roll">
+		<button type=submit>Delete Student</button>
+		</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Display All Students</title>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #F5E8C7;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #DEBA9D;
+}
+
+th {
+    color: #6F4C5B;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F5E8C7;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #9E7777;
+}
+
+td {
+    color: #6F4C5B;
+}
+
+table, th, td {
+    border: 1px solid #6F4C5B;
+}
+
+    </style>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Roll</th>
+				<th>Name</th>
+				<th>Branch</th>
+				<th>YOP</th>
+				<th>CGPA</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<tr th:each ="st:${studentList}">
+				<td th:text="${st.roll}"></td>
+				<td th:text="${st.name}"></td>
+				<td th:text="${st.branch}"></td>
+				<td th:text="${st.yop}"></td>
+				<td th:text="${st.cgpa}"></td>
+			
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

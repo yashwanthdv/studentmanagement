@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Student</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5E8C7;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+   	width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #DEBA9D;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #9E7777;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #6F4C5B;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #9E7777;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #6F4C5B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #9E7777;
+}
+
+    </style>
+</head>
+<body>
+<h2>Update Existing Student</h2>
+<div class="form-container">
+        
+        <form action="/updateStudent" method="post">
+            <div class="form-group">
+                <label for="roll">Roll Number:</label>
+                <input type="text" name="roll" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <input type="text" name="branch" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="yop">YOP</label>
+                <input type="number" name="yop" required>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="cgpa">CGPA:</label>
+                <input type="text" name="cgpa" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Update Student</button>    
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
