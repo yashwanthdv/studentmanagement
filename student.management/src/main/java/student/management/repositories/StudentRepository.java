@@ -7,4 +7,6 @@ import student.management.entities.Student;
 public interface StudentRepository
 extends JpaRepository<Student, Integer>{
 
+	
+
 }
